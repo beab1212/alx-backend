@@ -8,10 +8,10 @@ my_cache.put("B", "World")
 my_cache.put("C", "Holberton")
 my_cache.put("D", "School")
 my_cache.print_cache()
-print(my_cache.get("B"))
-my_cache.put("E", "Battery")
+print(my_cache.get("B"))	#World
+my_cache.put("E", "Battery")		#DISCARD: A
 my_cache.print_cache()
-my_cache.put("C", "Street")
+my_cache.put("C", "Street")		#NONE
 my_cache.print_cache()
 print(my_cache.get("A"))
 print(my_cache.get("B"))
