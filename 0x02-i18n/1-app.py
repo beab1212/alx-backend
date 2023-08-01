@@ -6,7 +6,7 @@ from flask_babel import Babel
 
 app = Flask(__name__)
 app.config.from_object(Config)
-babe = Babel(app)
+babel = Babel(app)
 
 
 class Config:
@@ -23,4 +23,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
