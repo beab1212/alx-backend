@@ -6,7 +6,9 @@ from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """LIFOCache"""
+    """
+    LIFOCache
+    """
     def __init__(self):
         super(LIFOCache, self).__init__()
 
