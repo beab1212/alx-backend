@@ -25,5 +25,4 @@ class FIFOCache(BaseCaching):
         """
         get case_data item by key
         """
-        if key is not None or key in self.cache_data.keys():
-            return self.cache_data[key]
+        return self.cache_data.get(key, None)
