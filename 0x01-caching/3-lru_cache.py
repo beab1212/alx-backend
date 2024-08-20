@@ -6,7 +6,9 @@ from base_caching import BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """LRUCache"""
+    """
+    LRUCache
+    """
     def __init__(self):
         super(LRUCache, self).__init__()
         self.used_key = []

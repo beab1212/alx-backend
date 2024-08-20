@@ -8,7 +8,9 @@ from base_caching import BaseCaching
 # ['A', 'B', 'C', 'D']
 
 class MRUCache(BaseCaching):
-    """MRUCache implementation"""
+    """
+    MRUCache implementation
+    """
     def __init__(self):
         super(MRUCache, self).__init__()
         self.used_key = []
