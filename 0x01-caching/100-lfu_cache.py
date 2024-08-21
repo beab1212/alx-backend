@@ -5,9 +5,6 @@ LFUCache implementation
 from base_caching import BaseCaching
 
 
-#  { 'A': 1, 'B': 1, 'C': 1, 'D': 1 }
-
-# E{ 'E': 1, 'B': 1, 'C': 1, 'D': 1 }
 class LFUCache(BaseCaching):
     """LFUCache"""
     def __init__(self):
@@ -18,18 +15,22 @@ class LFUCache(BaseCaching):
         """
         add new dict to the case_date
         """
-        if key is not None and item is not None:
-            if (len(self.cache_data) >= self.MAX_ITEMS and
-                    key not in self.cache_data):
-                pass
-
-
-
+        if not (key is None or item is None):
+            self.cache_data[key] = item
+            if len(self.cache_data.keys()) > self.MAX_ITEMS:
+                pop = min(self.used_key, key=self.used_key.get)
+                self.used_key.pop(pop)
+                self.cache_data.pop(pop)
+                print(f"DISCARD: {pop}")
+            if not (key in self.used_key):
+                self.used_key[key] = 0
+            else:
+                self.used_key[key] += 1
 
     def get(self, key):
         """
         get case_data item by key
         """
-        if key in self.cache_data:
+        if key is not None and key in self.cache_data.keys():
             self.used_key[key] += 1
         return self.cache_data.get(key, None)
